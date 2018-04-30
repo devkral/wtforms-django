@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='WTForms-Django',
-    version='0.2dev',
+    name='WTForms-Django-alex',
+    version='0.2',
     url='http://github.com/wtforms/wtforms-appengine/',
     license='BSD',
     author='Thomas Johansson, James Crasta',
