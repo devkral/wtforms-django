@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='WTForms-Django-alex',
-    version='0.2',
+    version='0.2.1',
     url='http://github.com/wtforms/wtforms-appengine/',
     license='BSD',
     author='Thomas Johansson, James Crasta',
@@ -25,6 +25,7 @@ setup(
     ],
     packages=[
         'wtforms_django',
+        'wtforms_django.templatetags',
     ],
     package_data={
     },
