@@ -11,19 +11,16 @@ python:
 
 env:
   matrix:
-    - DJANGO="<1.5"
-    - DJANGO="<1.6"
-    - DJANGO="<1.6" LOCALFLAVOR=django-localflavor
-    - DJANGO="<1.7"
-    - DJANGO="<1.7" LOCALFLAVOR=django-localflavor
+    - DJANGO="<1.12"
+    - DJANGO="<2.1"
 
 install:
-  - pip install Django$DJANGO $LOCALFLAVOR black
+  - pip install Django$DJANGO black
   - pip install .
   - pip install -r tests/requirements.txt
 
 script:
-  - coverage run --with-pep8 tests/runtests.py --force-all
+  - coverage run tests/runtests.py --force-all
   - black --check .
 
 after_success:
@@ -36,6 +33,7 @@ cache:
 branches:
   only:
     - master
+    - test
     - /^.*-maintenance$/
 
 notifications:
