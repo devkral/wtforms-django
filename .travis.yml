@@ -23,7 +23,7 @@ install:
   - pip install -r tests/requirements.txt
 
 script:
-  - coverage run tests/runtests.py --with-pep8 --force-all
+  - coverage run --with-pep8 tests/runtests.py --force-all
   - black --check .
 
 after_success:
