@@ -10,9 +10,16 @@ python:
   - pypy3
 
 env:
-  matrix:
-    - DJANGO="<1.12"
-    - DJANGO="<2.1"
+  - DJANGO="<1.12"
+  - DJANGO="<2.1"
+matrix:
+  exclude:
+    - env: DJANGO="<2.1"
+      python: 2.7
+    - env: DJANGO="<2.2"
+      python: 3.4
+  allow_failures:
+    - nightly
 
 install:
   - pip install Django$DJANGO
